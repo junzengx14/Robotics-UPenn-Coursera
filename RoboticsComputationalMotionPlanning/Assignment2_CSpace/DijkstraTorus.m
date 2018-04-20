@@ -68,7 +68,7 @@ while true
     
     if ((current == dest_node) || isinf(min_dist))
         break;
-    end;
+    end
     
     % Update map
     map(current) = 3;         % mark current node as visited
@@ -82,8 +82,54 @@ while true
    
     %%% All of your code should be between the two lines of stars. 
     % *******************************************************************
+
+    if (i>1 && i<=nrows)
+        ii = i-1;
+        jj = j;
+        update (ii,jj,min_dist+1,current);
+    end
     
+    if i<=1
+        ii = nrows;
+        jj = j;
+        update (ii-1,jj,min_dist+1,current);
+    end
     
+    if (i>=1 && i<nrows)
+        ii = i+1;
+        jj = j;
+        update (ii,jj,min_dist+1,current);
+    end
+    
+    if i>=nrows
+        ii = 1;
+        jj = j;
+        update (ii+1,jj,min_dist+1,current);
+    end
+    
+    if (j>1 && j<=ncols)
+        jj = j-1;
+        ii = i;
+        update (ii,jj,min_dist+1,current);
+    end
+    
+    if j<=1
+        ii = i;
+        jj = ncols;
+        update (ii,jj-1,min_dist+1,current);
+    end
+    
+    if (j>=1 && j<ncols)
+        jj =j+1;
+        ii = i;
+        update (ii,jj,min_dist+1,current);
+    end
+    
+    if j>=ncols
+        ii = i;
+        jj = 1;
+        update (ii,jj+1,min_dist+1,current);
+    end    
     % *******************************************************************
 end
 
