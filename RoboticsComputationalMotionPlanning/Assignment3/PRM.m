@@ -57,14 +57,22 @@ for i = 2:nsamples
     % distance between the new sample and each of the samples that has been
     % generated so far in the program.
     distances = Dist(x, samples(:,1:(i-1)));
-    
     %%% YOUR CODE HERE
     %
     % Find the closest k samples, use the LocalPlanner function to see if
     % you can forge an edge to any of these samples and update the edges,
     % edge_lengths and nedges variables accordingly.
     %
-    
+    [distances_sorted,order] = sort(distances);
+    for j = 1:min(k,i)
+        index = order(j); dis = distances_sorted(j);
+        if LocalPlanner(x,samples(:,j)) == true
+            nedges = nedges + 1;
+            edges(nedges,:) = [i,j];
+            edge_lengths(nedges) = dis;
+        else
+        end
+    end
     fprintf (1, 'nsamples = %d, nedges = %d\n', i, nedges);
    
 end
