@@ -33,11 +33,11 @@ start = [50, 350];
 route = GradientBasedPlanner (f, start, goal, 1000);
 
 
-display_repulsive = false; % Display Repulsive Potential
-display_attractive = false; % Display Attractive Potential
+display_repulsive = true; % Display Repulsive Potential
+display_attractive = ; % Display Attractive Potential
 display_cspace = false; % Display Configuration Space
 display_totalpot = false; % Display complete potential 
-display_quiverplot = true; % Display Quiverplot
+display_quiverplot = false; % Display Quiverplot
 
 if isequal(display_repulsive,true) 
     figure;

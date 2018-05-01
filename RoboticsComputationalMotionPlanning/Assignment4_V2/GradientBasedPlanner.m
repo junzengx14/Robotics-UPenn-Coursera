@@ -14,7 +14,15 @@ function route = GradientBasedPlanner (f, start_coords, end_coords, max_its)
 
 %%% All of your code should be between the two lines of stars.
 % *******************************************************************
-route = 0;
+route = double(start_coords);
+pos = start_coords;
+i = 0;
+while (i < max_its) && (norm(end_coords - pos) >= 2)
+    Delta = [gx(round(pos(2)),round(pos(1))),gy(round(pos(2)),round(pos(1)))];
+    pos = pos + Delta/norm(Delta);
+    route = [route; double(pos)];
+    i = i + 0.5;
+end
 
 % *******************************************************************
 end
