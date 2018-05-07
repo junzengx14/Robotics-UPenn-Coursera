@@ -24,17 +24,17 @@ function [] = SLIP_HybridSim_RaibertHopper(duration,gain,hObject,probnum)
     if probnum ==1 || probnum==3
         control.dxdtDesired = 0;
     elseif probnum ==2
-        control.dxdtDesired = 2;
+        control.dxdtDesired = 2; %was 2
     else
         control.dxdtDesired = 1.5;
     end
-    control.k_dxdt = gain;%0.1; 
+    control.k_dxdt = 0.12;% gain % 0.1; 
     % pitch
     control.phiDesired = pi/12;
     control.kp_phi = 3; % was 3
     control.kd_phi = 3; % was 3
     % hopping height
-    control.thrustDuration = duration;%0.05; % was 0.1
+    control.thrustDuration = 0.042; % 0.05; % was 0.1
     control.thrust = 20; % was 20
     
     % --- simulation parameters ---
