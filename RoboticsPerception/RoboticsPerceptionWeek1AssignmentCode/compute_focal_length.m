@@ -16,5 +16,11 @@ function [ f ] = compute_focal_length( d_ref, f_ref, pos )
 
 % YOUR CODE HERE
 
+f = zeros(1,size(pos,2));
+% Read reference distance
+for i = 1:size(pos,2)
+    f(i) = f_ref/d_ref*(d_ref - pos(i));
+end
+
 end
 

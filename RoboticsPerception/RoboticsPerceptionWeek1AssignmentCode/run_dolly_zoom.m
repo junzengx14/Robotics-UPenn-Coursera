@@ -27,7 +27,7 @@ for i = 1 : length(f)
     figure(1), hold on, axis equal;
     xlim([0,1920]), ylim([0,1080]);
     project_objects(f(i), pos(i), points, 1);
-    pause(0.1);
+    pause(0.001);
 end;
 fprintf('\n');
 
