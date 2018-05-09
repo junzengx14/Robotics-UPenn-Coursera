@@ -13,7 +13,7 @@ function [ f, pos ] = compute_f_pos( d1_ref, d2_ref, H1, H2, ratio, f_ref )
 % - H1: height of the first object in physical world
 % - H2: height of the second object in physical world
 % - ratio: ratio between two objects in image coordinate 
-% (actually it represents the ratio between pixels in two figures) (Confusion Explanation from Coursera)
+% (actually it represents the ratio between pixels in two figures) (Confusion Expla from Coursera)
 % - f_ref: 1 by 1 double, previous camera focal length
 % Output:
 % - f: 1 by 1, camera focal length
