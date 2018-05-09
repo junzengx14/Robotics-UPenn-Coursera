@@ -12,7 +12,8 @@ function [ f, pos ] = compute_f_pos( d1_ref, d2_ref, H1, H2, ratio, f_ref )
 % - d2_ref: distance of the second object
 % - H1: height of the first object in physical world
 % - H2: height of the second object in physical world
-% - ratio: ratio between two objects in image coordinate (h1/h2)
+% - ratio: ratio between two objects in image coordinate (h1'/h2') 
+% (Error from Coursera)
 % - f_ref: 1 by 1 double, previous camera focal length
 % Output:
 % - f: 1 by 1, camera focal length
@@ -20,7 +21,11 @@ function [ f, pos ] = compute_f_pos( d1_ref, d2_ref, H1, H2, ratio, f_ref )
 
 % YOUR CODE HERE
 
+temp = f_ref * H1 / d1_ref ;
 
+pos = (d1_ref * H2 * ratio - d2_ref * H1)/(H2 * ratio - H1); % from the ratios for "u"
+
+f = temp *(d1_ref - pos) / H1;
 
 end
 
