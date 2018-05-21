@@ -8,7 +8,7 @@ function [t,X] = vh2body(pk,pd,tmax,hObject)
   p.g    = 9.81;
   p.b    = 20;
   % PARAMS TO CHANGE -------------------
-  p.d    = pd; % half of body length
+  p.d    = 0.2; % p.d = pd % half of body length
   p.k =  pk;
   % NO MORE CHANGE ---------------------
   % calculated
