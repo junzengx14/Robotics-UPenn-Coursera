@@ -20,7 +20,10 @@ function [ warped_pts ] = warp_pts( video_pts, logo_pts, sample_pts)
 [ H ] = est_homography(video_pts, logo_pts);
 
 % YOUR CODE HERE
-
-warped_pts = [];
+warped_pts = [sample_pts ones(size(sample_pts, 1), 1)]*H;
+% normalization
+warped_pts(:, 1) = warped_pts(:, 1)./warped_pts(:, 3);
+warped_pts(:, 2) = warped_pts(:, 2)./warped_pts(:, 3);
+warped_pts = warped_pts(:, [1 2]);
 end
 
