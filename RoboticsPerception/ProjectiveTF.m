@@ -1,4 +1,4 @@
-%% Projective Transformations
+%% Quiz: Compute Projective Transformations in Week 2
 
 %% Q2
 a = [1;0;0];
