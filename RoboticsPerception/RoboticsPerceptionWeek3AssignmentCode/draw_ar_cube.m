@@ -13,7 +13,8 @@ X = points(inds,:);
 % Compute other positions
 for j = 1:2:length(X)
     Xj = X([j,j+1],:);
-    im = insertShape(im, 'Line', [round(Xj(1,1:2)), round(Xj(2,1:2)) ], 'LineWidth', 5);
+    im = insertShape(im, 'Line', [round(Xj(1,1:2)), round(Xj(2,1:2)) ],...
+        'Color','yellow','LineWidth', 5);
 end
 im_out = im;
 

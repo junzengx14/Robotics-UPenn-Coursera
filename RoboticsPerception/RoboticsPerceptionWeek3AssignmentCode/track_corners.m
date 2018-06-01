@@ -15,13 +15,19 @@ corners = zeros(4,2,size(images,1));
 
 img_pts = img_pts_init; % img_pts is where you will store the tracked points
 corners(:,:,1) = img_pts;
-
+pT = vision.PointTracker();
+Irgb = images{1};
+% need gray file to use step function later on
+I = rgb2gray(Irgb);
+initialize(pT,img_pts,I);
 % Iterate through the rest of the images
 for i = 2:size(images,1)
     %%%% CODE FOR TRACKING HERE %%%%
+    Irgb = images{i};
+    I = rgb2gray(Irgb);
+    [img_pts,~] = step(pT,I);
     % Store corners and visualize results (if desired)
     corners(:,:,i) = img_pts;
 end
-
 end
 
