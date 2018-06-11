@@ -56,3 +56,11 @@ x3p = x3p ./ repmat(x3p(3, :), [3, 1]);
 DisplayCorrespondence(data.img1, x1, x1p(1:2,:)');
 DisplayCorrespondence(data.img2, x2, x2p(1:2,:)');
 DisplayCorrespondence(data.img3, x3, x3p(1:2,:)');
+
+
+% To compute
+%   fundamental matrix            - EstimateFundamentalMatrix.m
+%   essential matrix              - EssentialMatrixFromFundamentalMatrix.m
+%   point triangulation           - LinearTriangulation.m
+%   camera localization via PnP   - LinearPnP
+%   nonlinear refinement          - Nonlinear_Triangulation
